@@ -1,0 +1,6 @@
+Partido;id Equipo1;Nombre eq1;Descripcion;Goles eq1;goles Eq2;id Equipo2;Nombre eq2;Descripcion;Ronda
+1;1;Argentina;Seleccionado;1;2;3;Arabia Saudita;Seleccionado;1
+2;2;Polonia;Seleccionado;0;0;4;Mexico;Seleccionado;1
+3;1;Argentina;Seleccionado;1;1;4;Mexico;Seleccionado;1
+4;3;Arabia ;Seleccionado;1;2;2;Polonia;Seleccionado;1
+5;1;Argentina;Seleccionado;5;0;5;Francia;Seleccionado;2
