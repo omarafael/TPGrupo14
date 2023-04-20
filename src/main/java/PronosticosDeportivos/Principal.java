@@ -15,16 +15,14 @@ public class Principal {
 		
 		listaDePartidos = Partido.ArmarListaPartidos(archivo);
 		
-		for(Partido partidos: listaDePartidos) {
-			System.out.println(partidos.getIdPartido());
-		}
+		
 		
 		listaDePersonas = Persona.ArmarListaDePersonas(archivo2,listaDePartidos);
 		
-		for(Persona personas: listaDePersonas) {
-			System.out.println(personas.getNombre());
+	//	for(Persona personas: listaDePersonas) {
+	//		System.out.println(personas.getNombre());
 			
-		}
+	//	}
 		
 	   	        	
 	   

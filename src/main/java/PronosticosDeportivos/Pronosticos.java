@@ -39,32 +39,14 @@ public class Pronosticos {
 		this.resultadoEquipo1 = resultadoEquipo1;
 	}
 	
-	public int Puntos() {
+	public  int Puntos() {
 		int Puntos=0;
-		if (this.resultadoEquipo1.equals(partido.Resultadoequipo1())) {
+		if (resultadoEquipo1.equals(partido.Resultadoequipo1())) {
 			Puntos=1;
 		}
 			return Puntos;
 		}
 	
-	//--------------------------------------------------------------------------
-	
-	
-	
-
-	// ---------------------------------------------------------------------
-
-	public static int contarPuntos(ArrayList<Pronosticos> listaDePronosticos) {
-
-		int totalPuntos = 0;
-		for (Pronosticos pronostico : listaDePronosticos) {
-
-			totalPuntos = totalPuntos + pronostico.Puntos();
-		}
-
-		return totalPuntos;
-	}
-
 
 	
 	}

@@ -56,7 +56,7 @@ public class Equipo {
 	public static Equipo existeEquipo(String nombreEquipo, String tipoEquipo) {
 		
 		for( Equipo equipo: listaEquipos) {
-			if (equipo.getNombre().equals(nombreEquipo));
+			if (equipo.getNombre().equals(nombreEquipo))
 				return equipo;
 			} 
 		    Equipo esteEquipo= new Equipo(nombreEquipo,tipoEquipo);
