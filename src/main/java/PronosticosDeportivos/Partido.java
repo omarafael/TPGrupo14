@@ -99,21 +99,36 @@ public class Partido {
     public static ArrayList<Partido> ArmarListaPartidos(String archivo) {
 
 		ArrayList<Partido> listaDePartidos = new ArrayList<Partido>();
+		boolean errores=false;
 		try {
 
 			CSVReader csvReader = new CSVReader(new FileReader(archivo));
 			String[] fila = null;
 			String[] estaFila = null;
 			Boolean primeraFila=true;
-			
+			int nrofila=0;			
 			while ((fila = csvReader.readNext()) != null) {
 				if (primeraFila) {
 					primeraFila=false;
+					nrofila++;
 				} else {
 					
 			
 				estaFila = fila[0].split(";");
-
+				
+				if (!estaFila[4].matches("[0-9]+") | !estaFila[5].matches("[0-9]+") ) {
+					System.out.println("Error en fila: " + nrofila + " del archivo de partidos, los goles deben ser enteros");
+					nrofila++;
+					errores=true;
+					continue;
+				}
+                if (estaFila.length!=11) {
+                	System.out.println("Error en fila: " + nrofila + " del archivo de partidos, los campos deben ser 11");
+					nrofila++;
+					errores=true;
+					continue;
+                	
+                }
 				String idPartido = estaFila[0];
 				
 				Equipo equipo1 = Equipo.existeEquipo(estaFila[2],estaFila[3]);
@@ -124,6 +139,7 @@ public class Partido {
 
 				Partido nuevoPartido = new Partido(idPartido, equipo1, equipo2, golesEquipo1, golesEquipo2, ronda);
 				listaDePartidos.add(nuevoPartido);
+				nrofila++;
 				}
 			}
 
@@ -136,7 +152,10 @@ public class Partido {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+        if(errores==true) {
+        	System.out.println("Corrija los errores del archivo partidos y vuelva intentarlo");
+        	System.exit(0);
+        }
 		return listaDePartidos;
 
 	}

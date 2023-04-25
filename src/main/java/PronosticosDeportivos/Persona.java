@@ -75,7 +75,7 @@ public class Persona {
 						estePartido = partido;
 					}
 				}
-         
+               
 				
 				String resultadoEquipo1 = "";
 
